@@ -1,0 +1,17 @@
+body {
+  background-color: gray;
+  color: white;
+  padding: 10px;
+}
+
+#picture {
+  float: left;
+}
+
+#description {
+    float: right;
+}
+
+#reviews {
+  clear: both;
+}
