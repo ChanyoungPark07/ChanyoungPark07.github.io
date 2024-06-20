@@ -1,0 +1,376 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Mono', monospace;
+}
+
+body{
+  background-color: black;
+  overflow: hidden;
+}
+
+/*----- Effects -----*/
+
+#blob{
+  height: 500px;
+  aspect-ratio: 0.5;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25%;
+  background: linear-gradient(to right, skyblue, turquoise);
+  animation: rotate 5s infinite linear;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+@keyframes rotate{
+  0%{
+    transform: scale(0.75) rotate(0deg);
+  }
+  50%{
+    transform: scale(0.90) rotate(180deg);
+  }
+  100%{
+    transform: scale(0.75) rotate(360deg);
+  }
+}
+
+#blur{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backdrop-filter: blur(150px);
+  z-index: 2;
+}
+
+.slide-left-1{
+  white-space: nowrap;
+  animation: 3s slide-left ease;
+}
+@keyframes slide-left{
+  from {
+    margin-left: 200%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+.slide-left-2{
+  white-space: nowrap;
+  animation: 3.5s slide-left ease;
+}
+@keyframes slide-left {
+  from {
+    margin-left: 200%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+.slide-left-3{
+  white-space: nowrap;
+  animation: 4s slide-left ease;
+}
+@keyframes slide-left {
+  from {
+    margin-left: 200%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+.slide-left-4{
+  white-space: nowrap;
+  animation: 4.5s slide-left ease;
+}
+@keyframes slide-left {
+  from {
+    margin-left: 200%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+.slide-display-1{
+  white-space: nowrap;
+  animation: 5s slide-right ease;
+}
+@keyframes slide-right {
+  from {
+    margin-left: -70%;
+  }
+  to {
+    margin-left: 50%;
+  }
+}
+
+/*----- Line Display -----*/
+
+.line-display{
+  z-index: 3;
+  position: absolute;
+  border-left: 6px solid white;
+  rotate: -90deg;
+  height: 1500px;
+  margin-top: -49%;
+  margin-left: 50%;
+}
+
+.slide-display-1{
+  z-index: 4;
+  position: absolute;
+  border-left: 6px solid turquoise;
+  rotate: -90deg;
+  height: 1500px;
+  margin-top: -49%;
+  margin-left: 50%; 
+}
+
+/*----- Name -----*/
+
+.name{
+  position: absolute;
+  margin-left: 50px;
+  user-select: none;
+  z-index: 4;
+}
+
+.name h1{
+  font-size: 120px;
+  font-style: italic;
+  color: white;
+  margin-top: auto;
+}
+
+.name p{
+  color: white;
+  font-size: 100px;
+  font-style: italic;
+  transform: translateY(-50px);
+}
+
+/*----- Nav -----*/
+
+.header{
+  position: relative;
+  user-select: none;
+  z-index: 3;
+}
+
+nav{
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-5px);
+}
+
+nav img{
+  width: 150px;
+}
+
+.nav-links{
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav-links ul li::after{
+  content: '';
+  width: 0%;
+  height: 3px;
+  transform: translateY(-3px);
+  background: turquoise;
+  display: block;
+  margin: auto;
+  transition: 1s;
+}
+
+.nav-links ul li:hover::after{
+  width: 100%;
+}
+
+/*----- Home -----*/
+
+.home-image img{
+  position: absolute;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  border: 6px solid white;
+  margin-left: 65%;
+  transform: translateY(120px);
+  user-select: none;
+  object-fit: cover;
+  z-index: 3;
+}
+
+.home-resume a{
+  position: absolute;
+  padding: 30px 50px;
+  border: 6px solid white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-left: 50px;
+  transform: translateY(475px);
+  user-select: none;
+  z-index: 3;
+}
+
+.home-resume a::after{
+  content: '';
+  width: 0%;
+  height: 3px;
+  transform: translateY(-3px);
+  background: turquoise;
+  display: block;
+  margin: auto;
+  transition: 1s;
+}
+
+.home-resume a:hover::after{
+  width: 100%;
+}
+
+/*----- About -----*/
+
+.about-list{
+  position: relative;
+  margin-left: 50px;
+  transform: translateY(75px);
+  user-select: none;
+  z-index: 3;
+}
+
+.about-list p{
+  font-size: 32px;
+  color: white;
+  font-weight: 400;
+}
+
+.about-list dl dt{
+  margin-top: 1.25%;
+  font-size: 24px;
+  text-indent: 100px;
+  color: white;
+  font-weight: 400;
+}
+
+.about-list dl dd{
+  margin-top: 0.5%;
+  font-size: 18px;
+  text-indent: 150px;
+  color: white;
+  font-weight: 400;
+}
+
+.about-experience{
+  position: relative;
+  transform: translateY(25px);
+  user-select: none;
+  z-index: 3;
+}
+
+.about-achievements{
+  position: relative;
+  transform: translateY(25px);
+  user-select: none;
+  z-index: 3;
+}
+
+/*----- Projects -----*/
+
+.project-list{
+  position: relative;
+  margin-left: 50px;
+  transform: translateY(125px);
+  user-select: none;
+  z-index: 3;
+}
+
+.project-list h3{
+  font-size: 36px;
+  margin-bottom: 5px;
+  color: white;
+  font-weight: 600;
+}
+
+.project-list h5{
+  user-select: text;
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: white;
+  font-weight: 400;
+}
+
+.project-two{
+  position: relative;
+  transform: translateY(50px);
+  user-select: none;
+  z-index: 3;
+}
+
+.project-three{
+  position: relative;
+  transform: translateY(50px);
+  user-select: none;
+  z-index: 3;
+}
+
+/*----- Contact -----*/
+
+.contact-me{
+  position: relative;
+  margin-left: 50px;
+  transform: translateY(125px);
+  user-select: none;
+  z-index: 3;
+}
+
+.contact-me h3{
+  font-size: 36px;
+  margin-bottom: 5px;
+  color: white;
+  font-weight: 600;
+}
+
+.contact-me h5{
+  user-select: text;
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: white;
+  font-weight: 400;
+}
+
+.contact-email{
+  position: relative;
+  transform: translateY(50px);
+  user-select: none;
+  z-index: 3;
+}
+
+.contact-linkdin{
+  position: relative;
+  transform: translateY(50px);
+  user-select: none;
+  z-index: 3;
+}
